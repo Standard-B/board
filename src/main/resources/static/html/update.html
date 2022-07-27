@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<header>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand p-3" href="#"><h2>Board Service</h2></a>
+    <div class="flex-column m-2">
+      <span class="text-light m-lg-2">test님! 안녕하세요</span>
+      <button type="button" class="btn btn-success">로그아웃</button>
+    </div>
+  </nav>
+</header>
+<main class="mb-2">
+  <div class="m-auto mt-4 align-self-center" style="width: 70%">
+    <div class="h2 pb-2">게시글 수정</div>
+    <form class="card">
+      <div class="card-header d-flex justify-content-between">
+        <label>NO : 1</label>
+        <label>2022.07.26</label>
+      </div>
+      <div class="card-header justify-content-between">
+        <label>작성자 : test</label>
+        <div class="flex-column float-end">
+          <label class="bi bi-eye-fill"> 1</label>
+          <label class="bi bi-chat-fill"> 2</label>
+          <label class="bi bi-hand-thumbs-up-fill">3</label>
+        </div>
+      </div>
+      <div class="card-body">
+        <label for="title" class="mb-1">제목</label>
+        <input type="text" class="form-control" id="title" value="test">
+        </br>
+        <label for="content" class="mb-1">내용</label>
+        <textarea rows="5" class="form-control" id="content">test</textarea>
+      </div>
+    </form>
+    <div class="flex-column float-end mt-2">
+      <a href="#" role="button" class="btn btn-info text-light bi bi-arrow-return-left"> 목록</a>
+      <a href="#" role="button" class="btn btn-primary bi bi-pencil-square"> 수정</a>
+      <button type="button" onclick="" class="btn btn-danger bi bi-trash"> 삭제</button>
+    </div>
+  </div>
+</main>
+
+<!-- bootstrap js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<footer class="footer mt-auto py-5 bg-dark">
+  <div class="container text-center">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
+</body>
