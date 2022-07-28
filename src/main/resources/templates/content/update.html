@@ -1,23 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <th:block th:replace="/layout/header :: header"></th:block>
 </head>
 <body class="d-flex flex-column min-vh-100">
-<header>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand p-3" href="#"><h2>Board Service</h2></a>
-        <div class="flex-column m-2">
-            <span class="text-light m-lg-2">test님! 안녕하세요</span>
-            <button type="button" class="btn btn-success">로그아웃</button>
-        </div>
-    </nav>
-</header>
+<th:block th:replace="/layout/nav :: nav"></th:block>
+<!-- content start -->
 <main class="mb-4">
     <div class="m-auto mt-4 align-self-center" style="width: 70%">
         <div class="h2 pb-2">게시글 수정</div>
@@ -43,19 +31,13 @@
             </div>
         </form>
         <div class="flex-column float-end mt-2">
-            <a href="#" role="button" class="btn btn-info text-light bi bi-arrow-return-left"> 취소</a>
+            <a th:href="read" href="#" role="button" class="btn btn-info text-light bi bi-arrow-return-left"> 취소</a>
             <button type="button" onclick="" class="btn btn-primary bi bi-pencil-square"> 완료</button>
         </div>
     </div>
 </main>
+<!-- content end -->
 
-<!-- bootstrap js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-<footer class="footer mt-auto py-5 bg-dark">
-    <div class="container text-center">
-        <span class="text-muted">Place sticky footer content here.</span>
-    </div>
-</footer>
+<th:block th:replace="/layout/footer"></th:block>
 </body>
+</html>

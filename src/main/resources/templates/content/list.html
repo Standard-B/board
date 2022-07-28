@@ -5,7 +5,6 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 <th:block th:replace="/layout/nav :: nav"></th:block>
-
 <!-- content start-->
 <main class="m-4 justify-content-center">
     <!-- 검색창 -->
@@ -17,7 +16,7 @@
     </div>
     <div class="h2 pb-3">게시판</div>
     <!-- 게시글 start -->
-    <table class="table text-center">
+    <table class="table text-center align-middle">
         <thead class="table-dark">
         <tr>
             <th scope="col" style="width: 5%">NO</th>
@@ -29,7 +28,7 @@
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td><a class="text-decoration-none" href="#">test 제목</a></td>
+            <td><a class="text-decoration-none" th:href="read" href="#">test</a></td>
             <td>
                 admin
                 </br>
@@ -42,10 +41,11 @@
         </tbody>
     </table>
     <!-- 게시글 목록 end -->
-    <button type="button" class="btn btn-success float-end bi bi-pencil-fill"> 글쓰기</button>
+    <button type="button" class="btn btn-success float-end bi bi-pencil-fill" th:onclick="location.href='write'" onclick="location.href='#'"> 글쓰기</button>
+    <!-- 페이지 이동 버튼 -->
+    <th:block th:replace="/button/page-number :: page-number"></th:block>
 </main>
 <!-- content end -->
-
 <th:block th:replace="/layout/footer :: footer"></th:block>
 </body>
 </html>

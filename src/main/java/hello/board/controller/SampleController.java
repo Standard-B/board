@@ -14,8 +14,28 @@ public class SampleController {
     public String list() {
 
         log.info("list.....");
-        return "posts/list";
+        return "content/list";
 
     }
 
+    @GetMapping("/write")
+    public String write() {
+
+        log.info("write.....");
+        return "content/write";
+    }
+
+    @GetMapping("/read")
+    public String read() {
+
+        log.info("read.....");
+        return "content/read";
+    }
+
+    @GetMapping("/update")
+    public String update() {
+
+        log.info("update.....");
+        return "content/update";
+    }
 }

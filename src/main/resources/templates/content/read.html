@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleag.org">
+<head>
+    <th:block th:replace="/layout/header :: header"></th:block>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<th:block th:replace="/layout/nav :: nav"></th:block>
+<!-- content start -->
+<main class="mb-4">
+    <div class="m-auto mt-4 align-self-center" style="width: 70%">
+        <div class="h2 pb-2">게시글 상세보기</div>
+        <form class="card">
+            <div class="card-header d-flex justify-content-between">
+                <label>NO : 1</label>
+                <label>2022.07.26</label>
+            </div>
+            <div class="card-header justify-content-between">
+                <label>작성자 : test</label>
+                <div class="flex-column float-end">
+                    <label class="bi bi-eye-fill"> 1</label>
+                    <label class="bi bi-chat-fill"> 2</label>
+                    <label class="bi bi-hand-thumbs-up-fill">3</label>
+                </div>
+            </div>
+            <div class="card-body">
+                <label for="title" class="mb-1">제목</label>
+                <input type="text" class="form-control" id="title" readonly value="test">
+                </br>
+                <label for="content" class="mb-1">내용</label>
+                <textarea rows="5" class="form-control" id="content" readonly>test</textarea>
+            </div>
+        </form>
+        <!-- comment -->
+        <th:block th:replace="content/comment :: comment"></th:block>
+        <div class="flex-column float-end mt-2">
+            <a th:href="list" href="#" role="button" class="btn btn-info text-light bi bi-arrow-return-left"> 목록</a>
+            <a th:href="update" href="#" role="button" class="btn btn-primary bi bi-pencil-square"> 수정</a>
+            <button type="button" onclick="" class="btn btn-danger bi bi-trash"> 삭제</button>
+        </div>
+    </div>
+</main>
+<!-- content end -->
+<th:block th:replace="layout/footer :: footer"></th:block>
+</body>
+</html>
