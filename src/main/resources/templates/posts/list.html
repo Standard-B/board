@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleag.org">
+<head>
+    <th:block th:replace="/layout/header :: header"></th:block>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<th:block th:replace="/layout/nav :: nav"></th:block>
+
+<!-- content start-->
+<main class="m-4 justify-content-center">
+    <!-- 검색창 -->
+    <div class="float-end">
+        <form class="d-flex">
+            <input class="form-control me-2 mb-2" type="search" placeholder="검색" aria-label="Search">
+            <button class="btn btn-success mb-2 bi bi-search" type="submit"></button>
+        </form>
+    </div>
+    <div class="h2 pb-3">게시판</div>
+    <!-- 게시글 start -->
+    <table class="table text-center">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col" style="width: 5%">NO</th>
+            <th scope="col" style="width: 50%">제목</th>
+            <th scope="col" style="width: 17%">작성자</th>
+            <th scope="col" style="width: 17%">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td><a class="text-decoration-none" href="#">test 제목</a></td>
+            <td>
+                admin
+                </br>
+                <i class="bi bi-chat-fill"> 2</i>
+                <i class="bi bi-hand-thumbs-up-fill"> 3</i>
+                <i class="bi bi-eye-fill"> 1</i>
+            </td>
+            <td>2022.07.27</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- 게시글 목록 end -->
+    <button type="button" class="btn btn-success float-end bi bi-pencil-fill"> 글쓰기</button>
+</main>
+<!-- content end -->
+
+<th:block th:replace="/layout/footer :: footer"></th:block>
+</body>
+</html>
