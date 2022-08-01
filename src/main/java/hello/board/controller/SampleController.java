@@ -20,7 +20,7 @@ public class SampleController {
     @GetMapping("/")
     public String index() {
 
-        return "layout/basic";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/list")
@@ -30,5 +30,13 @@ public class SampleController {
 
         model.addAttribute("result", service.getList(pageRequestDTO));
         return "content/list";
+    }
+
+    @GetMapping("/write")
+    public String write() {
+
+        log.info("write......");
+
+        return "content/write";
     }
 }

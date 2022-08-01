@@ -46,8 +46,25 @@
 
         <button type="button" class="btn btn-success float-end bi bi-pencil-fill" th:onclick="location.href='write'"> 글쓰기</button>
 
-        <!-- 페이지 이동 버튼 -->
-        <th:block th:replace="/button/page-number :: page-number"></th:block>
+        <!-- 페이지 이동 버튼 start -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination h-100 justify-content-center align-items-center">
+                <li class="page-item" th:if="${result.prev}">
+                    <a class="page-link" tabindex="-1" th:href="|list?page=${result.getEnd - 10}|">Previous</a>
+                </li>
+
+                <li th:class=" 'page-item ' + ${result.page == page?'active':''}" th:each="page: ${result.pageList}">
+                    <a class="page-link" th:href="|list?page=${page}|">
+                        [[${page}]]
+                    </a>
+                </li>
+
+                <li class="page-item" th:if="${result.next}">
+                    <a class="page-link" th:href="|list?page=${result.getEnd + 1}|">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 페이지 이동 버튼 end -->
 
     </th:block>
 
