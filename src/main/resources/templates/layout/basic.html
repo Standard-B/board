@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleag.org">
+<th:block th:fragment="setContent(content)">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+<!-- nav start -->
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand p-3" href="#"><h2>Board Service</h2></a>
+    <div class="flex-column m-2">
+        <button type="button" class="btn btn-success bi bi-person-fill"> 회원가입</button>
+        <button type="button" class="btn btn-success bi bi-box-arrow-in-right"> 로그인</button>
+    </div>
+</nav>
+<!-- nav end -->
+
+<!-- content start -->
+<main class="m-4 justify-content-center">
+    <th:block th:replace="${content}"></th:block>
+</main>
+<!-- content end -->
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<!-- footer start -->
+<footer class="footer mt-auto py-5 bg-dark" th:fragment="footer">
+    <div class="container text-center">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+<!-- footer end -->
+
+</body>
+
+</th:block>
+</html>

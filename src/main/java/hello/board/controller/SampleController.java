@@ -1,41 +1,34 @@
 package hello.board.controller;
 
+import hello.board.dto.PageRequestDTO;
+import hello.board.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/board")
 @Log4j2
+@RequiredArgsConstructor
 public class SampleController {
 
-    @GetMapping({"/", "/list"})
-    public String list() {
+    private final BoardService service;
 
-        log.info("list.....");
+    @GetMapping("/")
+    public String index() {
+
+        return "redirect:/board/list";
+    }
+
+    @GetMapping("/list")
+    public String list(PageRequestDTO pageRequestDTO, Model model) {
+
+        log.info("list........" + pageRequestDTO);
+
+        model.addAttribute("result", service.getList(pageRequestDTO));
         return "content/list";
-
-    }
-
-    @GetMapping("/write")
-    public String write() {
-
-        log.info("write.....");
-        return "content/write";
-    }
-
-    @GetMapping("/read")
-    public String read() {
-
-        log.info("read.....");
-        return "content/read";
-    }
-
-    @GetMapping("/update")
-    public String update() {
-
-        log.info("update.....");
-        return "content/update";
     }
 }
