@@ -20,7 +20,7 @@ public class SampleController {
     @GetMapping("/")
     public String index() {
 
-        return "redirect:/board/list";
+        return "layout/basic";
     }
 
     @GetMapping("/list")

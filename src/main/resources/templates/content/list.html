@@ -29,7 +29,7 @@
             <tbody>
             <tr th:each="dto : ${result.dtoList}">
                 <th scope="row">[[${dto.id}]]</th>
-                <td><a class="text-decoration-none" th:href="read" href="#">[[${dto.title}]]</a></td>
+                <td><a class="text-decoration-none" th:href="read">[[${dto.title}]]</a></td>
                 <td>
                     [[${dto.writer}]]
                     </br>
@@ -44,9 +44,7 @@
         </table>
         <!-- 게시글 목록 end -->
 
-        <button type="button" class="btn btn-success float-end bi bi-pencil-fill" th:onclick="location.href='write'"
-                onclick="location.href='#'"> 글쓰기
-        </button>
+        <button type="button" class="btn btn-success float-end bi bi-pencil-fill" th:onclick="location.href='write'"> 글쓰기</button>
 
         <!-- 페이지 이동 버튼 -->
         <th:block th:replace="/button/page-number :: page-number"></th:block>

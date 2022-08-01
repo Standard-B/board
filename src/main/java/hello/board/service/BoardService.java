@@ -30,7 +30,7 @@ public interface BoardService {
                 .title(entity.getTitle())
                 .content(entity.getContent())
                 .writer(entity.getWriter())
-                .regData(entity.getRegDate())
+                .regDate(entity.getRegDate())
                 .modDate(entity.getModDate())
                 .build();
 
